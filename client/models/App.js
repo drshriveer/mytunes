@@ -24,6 +24,11 @@ var App = Backbone.Model.extend({
       this.trigger('chq',this);
 
     }, this);
+    this.get('songQueue').on('dequeue', function(song){
+      this.get('songQueue').enqueue(song);
+      this.trigger('chq',this);
+
+    }, this);
 
   }
 

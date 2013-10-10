@@ -8,8 +8,7 @@ var SongQueue = Songs.extend({
   },
 
   enqueue: function(song){
-    console.log("song enqueue");
-    this.queue.push(song);
+    this.queue.push(new Song(song.attributes));
     this.trigger('chq',this);
   },
 
