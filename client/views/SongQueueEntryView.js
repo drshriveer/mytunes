@@ -5,7 +5,7 @@ var SongQueueEntryView = Backbone.View.extend({
 
   events: {
     'click': function() {
-      console.log('dequeue clicked, this:', this);
+      console.log('dequeue clicked, this:', this.model);
       this.model.dequeue();
     }
   },

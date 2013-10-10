@@ -8,6 +8,7 @@ var SongQueue = Songs.extend({
   },
 
   enqueue: function(song){
+    console.log('que new,', song);
     this.queue.push(new Song(song.attributes));
     this.trigger('chq',this);
   },
@@ -15,6 +16,8 @@ var SongQueue = Songs.extend({
   dequeue: function(song){
     console.log("song dequeue");
     delete this.get('queue')[this.get('queue').indexOf(song)];
+    this.trigger('chq',this);
+
   }
 
 
